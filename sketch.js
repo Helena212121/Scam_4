@@ -2,7 +2,7 @@ let dots = [];
 let size = 30;
 
 function setup() {
-  createCanvas(windowHeight, windowWidth);
+  createCanvas(windowWidth, windowHeight);
   textAlign(CENTER, CENTER);
   textSize(12);
 
