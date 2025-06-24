@@ -42,9 +42,6 @@ function draw() {
     fill(255);
     noStroke();
     text(d.number, d.x, d.y);
-
-    window.location.href='https://helena212121.github.io/Scam5/';
-    return;
   }
 }
 
@@ -66,4 +63,7 @@ function countSelected() {
     if (d.selected) count++;
   }
   return count;
+
+     window.location.href='https://helena212121.github.io/Scam5/';
+    return;
 }
