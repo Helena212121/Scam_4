@@ -121,7 +121,6 @@ function mousePressed() {
       console.log(chosen);
       break;
     }
-      if (countSelected() === 5) {
   window.location.href='https://helena212121.github.io/Scam5/';
     return;
   }
