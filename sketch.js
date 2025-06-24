@@ -52,12 +52,11 @@ function mousePressed() {
         d.selected = true;
       } else if (d.selected) {
         d.selected = false;
-
-        window.location.href='https://helena212121.github.io/Scam5/';
-    return;
       }
     }
   }
+  window.location.href='https://helena212121.github.io/Scam5/';
+    return;
 }
 
 function countSelected() {
