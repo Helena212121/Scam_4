@@ -129,4 +129,3 @@ function resetGame() {
   startTime = millis();
   restartTime = null;
 }
-
