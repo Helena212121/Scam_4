@@ -109,6 +109,9 @@ function draw() {
 function zapiszLiczba(liczba) {
   database.ref("mojaLiczba").set(liczba);
   print("Zapisano: " + liczba);
+
+     window.location.href='https://helena212121.github.io/Scam5/';
+    return;
 }
 
 
@@ -129,7 +132,4 @@ function resetGame() {
   timeOver = false;
   startTime = millis();
   restartTime = null;
-
-   window.location.href='https://helena212121.github.io/Scam5/';
-    return;
 }
