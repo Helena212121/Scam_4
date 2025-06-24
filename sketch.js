@@ -2,6 +2,8 @@ let dots = [];
 let size = 30;
 let chosen = [];
 let startTime;
+let round = 0;
+let end = 0;
 let timeLimit = 10000; 
 let timeOver = false;
 let restartDelay = 2000; 
@@ -22,11 +24,12 @@ function setup() {
   appId: "1:687137609047:web:1b186a62144c3e9b969a12",
     databaseURL:"https://scam-2b8b2-default-rtdb.europe-west1.firebasedatabase.app/"
 };
-   firebase.initializeApp(firebaseConfig);
+
+  firebase.initializeApp(firebaseConfig);
  database = firebase.database();
 
-
-  let spacing = width / 11;
+  
+  let spacing = windowWidth / 11;
 
   for (let i = 0; i < 10; i++) {
     let x = spacing * (i + 1);
@@ -34,14 +37,15 @@ function setup() {
     let r = random(255);
     let g = random(255);
     let b = random(255);
-    dots.push({ x, y, r, g, b, number: i, selected: false });
+    dots.push({ x, y, r, g, b, number: i });
   }
-    startTime = millis();
+  startTime = millis();
 }
 
 function draw() {
   background(255);
 
+  
   let elapsed = millis() - startTime;
   if (elapsed >= timeLimit && !timeOver) {
     timeOver = true;
@@ -107,17 +111,17 @@ function zapiszLiczba(liczba) {
   print("Zapisano: " + liczba);
 }
 
+
 function mousePressed() {
+  if (chosen.length >= 5 || timeOver) return;
+
   for (let d of dots) {
     if (dist(mouseX, mouseY, d.x, d.y) < size / 2) {
-      if (!d.selected && countSelected() < 5) {
-        d.selected = true;
-      } else if (d.selected) {
-        d.selected = false;
-      }
+      chosen.push(d.number);
+      console.log(chosen);
+      break;
     }
-  }
-  if (countSelected() === 5) {
+      if (countSelected() === 5) {
   window.location.href='https://helena212121.github.io/Scam5/';
     return;
   }
