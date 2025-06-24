@@ -121,8 +121,6 @@ function mousePressed() {
       console.log(chosen);
       break;
     }
-  window.location.href='https://helena212121.github.io/Scam5/';
-    return;
   }
 }
 
